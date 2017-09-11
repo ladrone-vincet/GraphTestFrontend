@@ -2,9 +2,12 @@ import React from 'react'
 import {observer} from 'mobx-react'
 
 
-const Todo = observer(({todo}) => {
+const Todo = observer(({todo, store}) => {
+
+  //@action
   const onCheckboxChange = () => {
-    todo.completed = !todo.completed
+    //todo.completed = !todo.completed
+    store.setCompleted(todo.id)
   }
 
   return (<div>

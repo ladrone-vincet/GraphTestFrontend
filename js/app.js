@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import { observable, computed, action } from 'mobx'
+import { observable, computed, action, createTransformer } from 'mobx'
 import {observer} from 'mobx-react'
 import Store from './store'
 import Todo from './components/todo'
@@ -11,17 +11,22 @@ class App extends React.Component {
     super()
   }
 
+
   @computed get showTitles() {
     return this.props.store.todos.map((todo) => {
-        return  <Todo key={todo.id} todo={todo}/>
-    })
-  }
+        return  <Todo
+                    store={this.props.store}
+                    key={todo.id}
+                    todo={todo} />
+    }
+  )
+}
 
   @action onNewTodo = () => {
     let todoTitle = prompt("Todo title:");
     this.props.store.addTodo(todoTitle)
   }
-  
+
 
   render() {
 

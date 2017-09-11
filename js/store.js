@@ -18,5 +18,16 @@ export default class Store {
       .then((res) => {this.todos.push(res.data.add[0])})
 
   }
+  //TODO update backend and make it good
+  setCompleted(id) {
+    console.log("I will change the id you know");
+    let todo = this.todos.find((item, index, arr) => {
+      return item.id == id
+    })
+    console.log(todo, id);
+    todo.completed = !todo.completed
+    this.networkProvider.fetchData(`setCompleted(title: "${todo.title}")`, true)
+    .then((res) => {todo.completed = res.data.update.completed})
+  }
 
 }

@@ -25,7 +25,7 @@ export default class NetworkProvider {
     return fetch(this.URL, header)
       .then(this.responseValidation)
       .then((validResponse) => {return validResponse.json()})
-      .catch(e => console.log(e))
+      .catch(e => console.warn(e))
 
   }
 }
