@@ -10,7 +10,7 @@ const Todo = observer(({todo, store}) => {
     store.setCompleted(todo.id)
   }
 
-  return (<div>
+  return (<div className="todo">
       <input type="checkbox" checked={todo.completed} onChange={onCheckboxChange}/>
       {todo.title} : {`${todo.completed}`}
     </div>

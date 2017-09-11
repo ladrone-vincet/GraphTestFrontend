@@ -30,11 +30,11 @@ class App extends React.Component {
 
   render() {
 
-    return (<div>
+    return (<div className="app">
     <p>The state is great</p>
-    {this.showTitles}
+    <div className="todos">{this.showTitles}</div>
 
-    <button onClick={this.onNewTodo}>Add a Todo</button>
+    <center><button onClick={this.onNewTodo}>Add a Todo</button></center>
     </div>)
   }
 }
