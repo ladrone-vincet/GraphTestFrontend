@@ -11,7 +11,7 @@ class App extends React.Component {
     super()
   }
 
-
+  // make it less store based, earese map or sth
   @computed get showTitles() {
     return this.props.store.todos.map((todo) => {
         return  <Todo
