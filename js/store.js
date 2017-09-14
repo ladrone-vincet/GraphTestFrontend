@@ -16,8 +16,14 @@ export default class Store {
     this.networkProvider
       .fetchData(`add(title:"${title}")`, true)
       .then((res) => {this.todos.push(res.data.add[0])})
-
   }
+
+  deleteTodo(title) {
+    this.networkProvider
+      .fetchData(`delete(title:"${title}")`)
+  }
+
+
   //TODO update backend and make it good
   setCompleted(id) {
     console.log("I will change the id you know");

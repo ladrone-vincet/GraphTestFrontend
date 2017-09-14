@@ -31,9 +31,8 @@ class App extends React.Component {
   render() {
 
     return (<div className="app">
-    <p>The state is great</p>
-    <div className="todos">{this.showTitles}</div>
-
+    <h1 className="white-text">Todo App</h1>
+    <div className="todos white-text">{this.showTitles}</div>
     <center><button onClick={this.onNewTodo}>Add a Todo</button></center>
     </div>)
   }
